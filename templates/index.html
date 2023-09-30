@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Add to Spotify Queue</title>
+	<script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+
+<body>
+	<form id="addSongForm">
+		<label for="uri">Enter the Spotify URI:</label>
+		<input type="text" id="uri" name="uri" required>
+		<button type="submit">Add to Queue</button>
+	</form>
+
+	<table id="currentQueueTable">
+		<thead>
+			<tr>
+				<th>Track</th>
+				<th>Artist</th>
+				<th>Album</th>
+			</tr>
+		</thead>
+		<tbody id="currentQueueTBody"></tbody>
+	</table>
+</body>
+
+</html>
