@@ -53,7 +53,6 @@ def refresh_access_token():
 
     response = requests.post(url, data=body)
     if response.status_code == 200:
-        print(response.json()['access_token'])
         access_token = response.json()['access_token']
     else:
         print(f"Error in refreshing access token: {response.json()}")
