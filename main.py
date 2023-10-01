@@ -21,6 +21,7 @@ def index():
 @app.route('/api/queue', methods=['GET'])
 def get_current_queue():
     global access_token
+    print(access_token)
     response = requests.get(base_url, headers={"Authorization": f"Bearer {access_token}"})
     if response.status_code == 401:
         access_token = refresh_access_token()
@@ -33,7 +34,7 @@ def add_to_queue():
     global access_token
     uri = request.json['uri']
     url = f"{base_url}?uri={uri}"
-
+    print(access_token)
     response = requests.post(url, headers={"Authorization": f"Bearer {access_token}"})
     if response.status_code == 401:
         access_token = refresh_access_token()
